@@ -55,4 +55,42 @@ On a final note, some protocols, like ICMP, require an egress rule regardless of
 ## OCI Gateway
 
 ### Internet Gateway
+![](img/ad42.png)
 
+IG provides a path for network traffic btw your VCN & the internet. Your can hv onl one IG per VCN. After creating an IG, you must add a route for the gateway in the public subnet route table to enable traffic flow. the IG allows inbound traffic to the pucli subnet. Instances need a public IP addr assigned.
+
+
+![](img/ad41.png)
+
+### NAT Gateway
+Host can initiate outbound connections to the internet and recieve responses, but no receive inbound connections initiated from the internet. Uses case: Updates, patches.
+Something that is distinct in the OCI is once your setup a NAT gateway you don't need to setup an IG for you to use the NAT Gateway
+
+![](img/ad43.png)
+
+Below is a figure showing the limits and boundaris for the NAT gateway.
+
+![](img/ad44.png)
+
+### Dynamic Routing Gateway(DRG)
+some of the main features of DRG incs:
+
+![](img/ad45.png)
+
+however DRG has its special use cases:
+
+![](img/ad46.png)
+
+here are some DRG attachments
+
+![](img/ad47.png)
+
+### Remote Peering Connection(RPC)
+
+### Service Gateway
+
+
+### Private Endpoints
+
+
+![](img/ad46.png)
