@@ -89,8 +89,67 @@ here are some DRG attachments
 
 ### Service Gateway
 
+![](img/ad49.png)
 
 ### Private Endpoints
 
 
-![](img/ad46.png)
+![](img/ad48.png)
+
+Below is Private endpoints in Object Storage
+
+![](img/ad50.png)
+
+### Public IPs
+You can assign a public IP to an instance to enable communication with the internet.The instance is assigned a public IP from the OCI addr pool.
+here are some things that must be put in place for the instance to comm directly with the internet:
+
+
+![](img/ad51.png)
+
+Public IPs come in two categories:
+
+
+![](img/ad52.png)
+
+
+__Ip address insight__- a cool tool in OCI i think you should checkout.
+
+### Notes on LB
+There are actually 2 categories:
+http and Network LBs.
+For the HTTP LBs, there is the _content-based routing: host based_ - involves multiple websites using a single LB & a independent set of back-end servers.
+
+![](img/ad53.png)
+
+There is another known as the path-based still under the content-based routing:
+
+![](img/ad54.png)
+
+There are two types of LBs:
+
+![](img/ad55.png)
+
+![](img/ad56.png)
+
+
+__Load Balancing Policies__ 
+
+
+![](img/ad57.png)
+
+## DNS Management
+_read up on this_
+
+## Traffic Steering
+Traffic mgt enables customers to config routing policies for serving intelligent responses to DNS queries.
+Different answers can be served for a query according to the logic in the customer-defined Traffic management Steering Policy, thus sending users to the most optimal location in your infra.
+__Use cases__:
+
+![](img/ad58.png)
+
+
+__Traffic Mgt Concepts__:
+
+
+![](img/ad59.png)
