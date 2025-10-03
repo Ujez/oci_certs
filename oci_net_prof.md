@@ -134,7 +134,11 @@ There are two types of LBs:
 
 
 __Load Balancing Policies__ 
+A note on this use case:
 
+You are tasked with configuring a Network Load Balancer (NLB) in Oracle Cloud Infrastructure (OCI) to distribute traffic among a group of backend servers. Your backend servers are hosting a critical application that requires session persistence based on both source and destination IP addresses, source and destination ports, and protocol. Which NLB configuration option should you select to meet this requirement?
+
+_Answer_: 5-Tuple Hash: Routes incoming traffic based on 5-Tuple (source IP and port, destination IP and port, protocol) Hash. This is the default Network Load Balancer policy.
 
 ![](img/ad57.png)
 
@@ -148,8 +152,58 @@ __Use cases__:
 
 ![](img/ad58.png)
 
+Example: You are responsible for optimizing traffic flow in your Oracle Cloud Infrastructure (OCI) environment and want to implement Traffic Management Steering Policies to direct users to the nearest available instance. Which steering policy in Oracle Cloud Infrastructure Traffic Management should you choose for this purpose?
+
+_Answer_: Geolocation Steering policies distribute DNS traffic to different endpoints based on the location of the end user.
+
 
 __Traffic Mgt Concepts__:
 
 
 ![](img/ad59.png)
+
+_checkout Geolocation traffic steering lab_
+
+# Design for Hybrid Networking Architecture
+
+## BGP
+
+### Equal-Cost Multi-Path Routing(ECMP)
+
+ECMP enables flow-based load balancing of network traffic over multiple virtual circuits or multiple IPsec tunnels (not a mix) using BGP.
+It allows active-active LBing and failover of network traffic btw a maximum of 8 circuits.
+5-tuple is used to distinguish flow. Multiple flows will be necessary to utilize all available bandwidth.
+
+
+![](img/ad60.png)
+
+An overview of an architecture for ECMP
+
+
+![](img/ad61.png)
+
+### Site-to-Site VPN
+offers a simple & secure way to connect your corporate network to OCI over your existing internet connection. It is recommended to always use BGP for all your tunnels, or static routing for all your tunnels
+
+![](img/ad62.png)
+
+
+This are some of the use cases:
+
+![](img/ad63.png)
+
+Another method of connecting on-premise to OCI is through the following topic below 
+
+### FastConnect
+From the image below we would be focused on FastConnect
+
+![](img/ad64.png)
+
+
+![](img/ad65.png)
+
+below are FastConnect connectivity models
+
+![](img/ad66.png)
+
+And then 
