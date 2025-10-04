@@ -206,4 +206,6 @@ below are FastConnect connectivity models
 
 ![](img/ad66.png)
 
-And then 
+![](img/ad66.png)
+
+
