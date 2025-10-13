@@ -76,4 +76,47 @@ Service CIDR label is a much easier way of assigning a destination CIDR in a rou
 Note that there are two ways that a private IP can communicate with resources outside the VCN, one is the _bastion_, & _DRG_
 
 ## NSG
-Are firewall rules that allows or deny ingress or egress traffic. Usually assigned to the VNIC of VMs, can be stateful - meaning allows tracking of responses during network connectivity.
+are firewall rules that allows or deny ingress or egress traffic. usually assigned to the vnic of vms, can be stateful - meaning allows tracking of responses during network connectivity.
+
+## VCN Connectivity
+_Local VCN Peering (Using LPGs)_
+> connect 2 VCNs in the same region.
+
+> resources can communicate by using private IP addr.
+
+> An LPG is required for each VCN peered locally.
+
+> 2 VCNs shouldn't have overlapping CIDRs.
+
+> A connection betwen those 2 LPGs
+
+> supporting routing rules
+
+> supporting security rules.
+
+
+![](img/ad81.png)
+
+
+## BGPs
+have what is called Autonomous system(AS), which help in determining the best path to route packets.
+
+## DRGs
+They're virtual routers that facilitates connection between on-premise and VCNs. Note that you can also attach VCN-to-VCN using DRG. Visit the docs for more info.
+Some rules that are prioritized here includes:
+> Static routes are chosen first before Dynamic routes
+
+> if there is conflicts by dynamic routes that is going to be resolved by Autonomous system(AS)
+
+> this is the order of priority in case there are route conflicts: __Static->VCN->Virtal Circuit->IPSec__
+
+
+![](img/ad82.png)
+This figure is showing what features and fxns DRG has.
+
+
+![](img/ad83.png)
+Showing the attachments of DRG
+
+
+![](img/ad84.png)
